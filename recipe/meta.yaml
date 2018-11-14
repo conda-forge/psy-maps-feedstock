@@ -1,6 +1,6 @@
 {% set name = "psy-maps" %}
-{% set version = "1.1.0" %}
-{% set sha256 = "9b1d7ad733226efd0f5bb556e067210030537de4f51a61bdce4bd2b1e9686afb" %}
+{% set version = "1.2.0" %}
+{% set sha256 = "4802f2da5627be2fa7acd0e5efa9e05e9c68e4ba441bbc1dd922bcf920e55494" %}
 
 package:
   name: {{ name|lower }}
