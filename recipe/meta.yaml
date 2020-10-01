@@ -13,16 +13,17 @@ source:
 
 build:
   number: 0
-  script: python setup.py install --single-version-externally-managed --record record.txt
+  script: python -m pip install . --no-deps --ignore-installed -vvv
+  skip: True # [py < 37]
 
 requirements:
-  build:
+  host:
     - python
-    - setuptools
+    - pip
   run:
     - python
-    - psyplot
-    - psy-simple
+    - {{ pin_compatible('psyplot', max_pin='x.x') }}
+    - {{ pin_compatible('psy-simple', max_pin='x.x') }}
     - cartopy
 
 test:
@@ -30,8 +31,8 @@ test:
     - psy_maps
 
 about:
-  home: https://github.com/Chilipp/psy-maps
-  license: GPL-2.0
+  home: https://github.com/psyplot/psy-maps
+  license: GPL-2.0-only
   license_family: GPL
   license_file: LICENSE
   summary: Psyplot plugin for visualization on a map
@@ -40,7 +41,7 @@ about:
     This psyplot plugin uses the cartopy package to visualize geo-referenced
     data on a map
   doc_url: http://psyplot.readthedocs.io/projects/psy-maps
-  dev_url: https://github.com/Chilipp/psy-maps
+  dev_url: https://github.com/psyplot/psy-maps
 
 extra:
   recipe-maintainers:
