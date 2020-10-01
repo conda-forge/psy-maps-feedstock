@@ -1,6 +1,6 @@
 {% set name = "psy-maps" %}
-{% set version = "1.2.0" %}
-{% set sha256 = "4802f2da5627be2fa7acd0e5efa9e05e9c68e4ba441bbc1dd922bcf920e55494" %}
+{% set version = "1.3.0" %}
+{% set sha256 = "3d3314c8bec58fb0956712b9524388edf010375142af89a94342369485ac5a88" %}
 
 package:
   name: {{ name|lower }}
@@ -12,22 +12,22 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 1000
+  number: 0
   script: python setup.py install --single-version-externally-managed --record record.txt
 
 requirements:
   build:
-  - python
-  - setuptools
+    - python
+    - setuptools
   run:
-  - python
-  - psyplot
-  - psy-simple
-  - cartopy
+    - python
+    - psyplot
+    - psy-simple
+    - cartopy
 
 test:
   imports:
-  - psy_maps
+    - psy_maps
 
 about:
   home: https://github.com/Chilipp/psy-maps
