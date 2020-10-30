@@ -25,6 +25,7 @@ requirements:
     - {{ pin_compatible('psyplot', max_pin='x.x') }}
     - {{ pin_compatible('psy-simple', max_pin='x.x') }}
     - cartopy
+    - scipy
 
 test:
   imports:
