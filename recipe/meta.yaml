@@ -33,15 +33,17 @@ test:
 
 about:
   home: https://github.com/psyplot/psy-maps
-  license: GPL-2.0-only
+  license: LGPL-3.0-only
   license_family: GPL
-  license_file: LICENSE
+  license_file:
+    - COPYING
+    - COPYING.LESSER
   summary: Psyplot plugin for visualization on a map
 
   description: |
     This psyplot plugin uses the cartopy package to visualize geo-referenced
     data on a map
-  doc_url: http://psyplot.readthedocs.io/projects/psy-maps
+  doc_url: https://psyplot.github.io/psy-maps
   dev_url: https://github.com/psyplot/psy-maps
 
 extra:
