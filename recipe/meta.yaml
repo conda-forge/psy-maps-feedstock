@@ -1,5 +1,5 @@
 {% set name = "psy-maps" %}
-{% set version = "1.4.0" %}
+{% set version = "1.4.1" %}
 
 
 package:
@@ -8,10 +8,10 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/psy-maps-{{ version }}.tar.gz
-  sha256: 86bf703469fe1282e9cc142d15158df7ac01a6115eb31ae764452bf5f11c4e4e
+  sha256: ea31b2fa65f3923832c06c505d3bb124348530b24a55ed1e0fc7db951524e369
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: {{ PYTHON }} -m pip install . -vv
 
