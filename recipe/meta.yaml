@@ -1,5 +1,6 @@
 {% set name = "psy-maps" %}
 {% set version = "1.4.2" %}
+{% set sha256 = "7ad8be02b98a4fe8c1fc09869c4a8490d1adfc9721cb953dcb6d6a6d5751b518" %}
 
 
 package:
@@ -7,21 +8,21 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/psy-maps-{{ version }}.tar.gz
-  sha256: 7ad8be02b98a4fe8c1fc09869c4a8490d1adfc9721cb953dcb6d6a6d5751b518
+  fn: {{ name }}-{{ version }}.tar.gz
+  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: {{ sha256 }}
 
 build:
-  number: 0
-  noarch: python
-  script: {{ PYTHON }} -m pip install . -vv
+  number: 1
+  script: python -m pip install . --no-deps --ignore-installed -vvv
+  skip: true  # [py == 36]
 
 requirements:
   host:
-    - python >=3.7
+    - python
     - pip
   run:
-    - python >=3.7
-    - {{ pin_compatible('psyplot', max_pin='x.x') }}
+    - python
     - {{ pin_compatible('psy-simple', max_pin='x.x') }}
     - cartopy
     - scipy
