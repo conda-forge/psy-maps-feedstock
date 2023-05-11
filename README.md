@@ -1,11 +1,11 @@
-About psy-maps
-==============
+About psy-maps-feedstock
+========================
+
+Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/psy-maps-feedstock/blob/main/LICENSE.txt)
 
 Home: https://github.com/psyplot/psy-maps
 
 Package license: LGPL-3.0-only
-
-Feedstock license: [BSD-3-Clause](https://github.com/conda-forge/psy-maps-feedstock/blob/main/LICENSE.txt)
 
 Summary: Psyplot plugin for visualization on a map
 
@@ -152,7 +152,4 @@ Feedstock Maintainers
 =====================
 
 * [@Chilipp](https://github.com/Chilipp/)
-
-
-<!-- dummy commit to enable rerendering -->
 
