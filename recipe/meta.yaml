@@ -1,6 +1,6 @@
 {% set name = "psy-maps" %}
-{% set version = "1.4.2" %}
-{% set sha256 = "7ad8be02b98a4fe8c1fc09869c4a8490d1adfc9721cb953dcb6d6a6d5751b518" %}
+{% set version = "1.5.0" %}
+{% set sha256 = "863973cf2614ab1254ff9a27a1a7afbe06b5acafe3aff16fdbbe1bcb7538f3e3" %}
 
 
 package:
@@ -13,9 +13,9 @@ source:
   sha256: {{ sha256 }}
 
 build:
-  number: 2
-  script: python -m pip install . --no-deps --ignore-installed -vvv
-  skip: true  # [py == 36]
+  number: 0
+  skip: true  # [py<39]
+  script: {{ PYTHON }} -m pip install . --no-deps -vvv
 
 requirements:
   build:
@@ -24,30 +24,33 @@ requirements:
   host:
     - python
     - pip
+    - setuptools
+    - versioneer
+    - tomli
   run:
     - python
-    - {{ pin_compatible('psy-simple', max_pin='x.x') }}
+    - {{ pin_compatible('psy-simple', max_pin='x.x', lower_bound='1.5.0') }}
     - cartopy
     - scipy
 
 test:
   imports:
     - psy_maps
+    - psy_maps.plotters
 
 about:
-  home: https://github.com/psyplot/psy-maps
+  home: https://codebase.helmholtz.cloud/psyplot/psy-maps
   license: LGPL-3.0-only
   license_family: GPL
   license_file:
-    - COPYING
-    - COPYING.LESSER
+    - LICENSES/
   summary: Psyplot plugin for visualization on a map
 
   description: |
     This psyplot plugin uses the cartopy package to visualize geo-referenced
     data on a map
   doc_url: https://psyplot.github.io/psy-maps
-  dev_url: https://github.com/psyplot/psy-maps
+  dev_url: https://codebase.helmholtz.cloud/psyplot/psy-maps
 
 extra:
   recipe-maintainers:
